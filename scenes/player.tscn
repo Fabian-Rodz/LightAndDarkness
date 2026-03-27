@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cmlvmxbrtdbao"]
+
+[ext_resource type="Script" uid="uid://pm0wweqsdq26" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://h65kw161ayxg" path="res://assets/Player/TempSprite.png" id="2_qhqgy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
+size = Vector2(1279, 782)
+
+[node name="Player" type="CharacterBody2D" unique_id=1500297690]
+collision_mask = 4
+script = ExtResource("1_g2els")
+
+[node name="Player1" type="Sprite2D" parent="." unique_id=79871794]
+visible = false
+texture = ExtResource("2_qhqgy")
+
+[node name="EnvironmentCollision" type="CollisionShape2D" parent="." unique_id=128762953]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_dqkch")
+
+[node name="Player2" type="Sprite2D" parent="." unique_id=1588754843]
+visible = false
+modulate = Color(0.080783345, 0.080783345, 0.080783345, 1)
+texture = ExtResource("2_qhqgy")
+
+[node name="InteractableArea" type="Area2D" parent="." unique_id=1795081366]
+
+[node name="InteractableCollision" type="CollisionShape2D" parent="InteractableArea" unique_id=2010585187]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_dqkch")
