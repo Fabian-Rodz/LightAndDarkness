@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://8y6n0f51vg54"]
+
+[ext_resource type="PackedScene" uid="uid://cmlvmxbrtdbao" path="res://scenes/player_class.tscn" id="1_rfmnd"]
+
+[node name="Player1" unique_id=1500297690 instance=ExtResource("1_rfmnd")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=79871794]
+visible = true

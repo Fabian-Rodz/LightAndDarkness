@@ -1,10 +1,14 @@
-# Main game test script
+"""
+This node holds the player. Each room/level is a node that
+contains this node as a child, which manages the player
+and its behavior logic.
+"""
 extends Node2D
 @onready var player_1: CharacterBody2D = $Player1
 @onready var player_2: CharacterBody2D = $Player2
 
 
-# 0 = startup, 1 = running, 2 = hit, 3 = jump
+# 0 = startup, 1 = active, 2 = endscreen
 var p1_state = 0
 var p2_state = 0
 
@@ -20,11 +24,11 @@ func start_game():
 
 
 func _ready() -> void:
-	player_1.is_p1 = true
-	player_1.change_sprite()
-	player_2.is_p1 = false
-	player_2.change_sprite()
-	
+	# this will make sure to identify the players
+	#player_1.is_p1 = true
+	#player_1.change_sprite()
+	#player_2.is_p1 = false
+	#player_2.change_sprite()
 	start_game()
 
 

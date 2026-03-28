@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ds382wnq6tuxb"]
+
+[ext_resource type="Script" uid="uid://bxpy1bdgpsgcn" path="res://scripts/room_test.gd" id="1_twv5e"]
+[ext_resource type="PackedScene" uid="uid://s4x8fmp33qge" path="res://scenes/players.tscn" id="2_ca18f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1745i"]
+
+[node name="RoomTest" type="Node2D" unique_id=429381505]
+script = ExtResource("1_twv5e")
+
+[node name="Players" parent="." unique_id=1753759059 instance=ExtResource("2_ca18f")]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1295646431]
+position = Vector2(733, 380.99997)
+scale = Vector2(23.485243, 23.326948)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=760670762]
+shape = SubResource("CircleShape2D_1745i")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
