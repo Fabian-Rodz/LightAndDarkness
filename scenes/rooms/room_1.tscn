@@ -1,7 +1,43 @@
 [gd_scene format=3 uid="uid://dyn4bytoirbrn"]
 
 [ext_resource type="PackedScene" uid="uid://ds382wnq6tuxb" path="res://scenes/rooms/room_class.tscn" id="1_scgta"]
-[ext_resource type="Script" uid="uid://dtdkqslb8ty2n" path="res://scripts/rooms_scripts/room_1.gd" id="2_hnbyo"]
+[ext_resource type="Script" uid="uid://dtdkqslb8ty2n" path="res://scripts/rooms_scripts/room1/room_1.gd" id="2_hnbyo"]
+[ext_resource type="Script" uid="uid://cmwe5jdkj68fn" path="res://scripts/rooms_scripts/area.gd" id="3_fbq1s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hnbyo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hnbyo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fbq1s"]
 
 [node name="Room_1" unique_id=429381505 instance=ExtResource("1_scgta")]
 script = ExtResource("2_hnbyo")
+
+[node name="StaticBody2D" parent="." index="0" unique_id=1528303112]
+position = Vector2(0, 1434)
+
+[node name="Area2D" type="Area2D" parent="." index="1" unique_id=1280411884]
+position = Vector2(453, 1113.0001)
+scale = Vector2(16.15589, 19.709343)
+script = ExtResource("3_fbq1s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0" unique_id=569695479]
+shape = SubResource("CircleShape2D_hnbyo")
+
+[node name="Area2D2" type="Area2D" parent="." index="2" unique_id=1107838980]
+position = Vector2(1306, 1113)
+scale = Vector2(16.15589, 19.709343)
+script = ExtResource("3_fbq1s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" index="0" unique_id=1803419804]
+shape = SubResource("RectangleShape2D_hnbyo")
+
+[node name="Area2D3" type="Area2D" parent="." index="3" unique_id=1768153773]
+position = Vector2(-832, 1097)
+scale = Vector2(16.15589, 19.709343)
+script = ExtResource("3_fbq1s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3" index="0" unique_id=800122481]
+shape = SubResource("CircleShape2D_fbq1s")
+
+[connection signal="action" from="Area2D2" to="." method="_on_area_2d_2_action"]

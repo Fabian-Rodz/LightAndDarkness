@@ -7,6 +7,10 @@ const FALL_SPEED = 5
 
 # with this will be able to control the name of the inputs
 var input_name
+# if the player can iteract with something
+var can_interact : bool
+
+var current_area : Area2D = null
 
 @onready var interactable_collision: CollisionShape2D = $InteractableArea/InteractableCollision
 @export var test = "Test"
@@ -60,7 +64,10 @@ func _physics_process(delta: float) -> void:
 			if Input.is_action_just_pressed(input_name + "up") and is_on_floor():
 				velocity.y = -JUMP_VELOCITY 
 			velocity.x = move_toward(velocity.x,direction.x * BASE_SPEED, 10000 * delta)
-		
+			if Input.is_action_just_pressed(input_name + "interact"):
+				if current_area != null : 
+					current_area.action.emit(self)
+					
 		Player_State.End_Screen:
 			pass
 	move_and_slide()
