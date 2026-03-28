@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://nbgj5x4xvh5e"]
+
+[ext_resource type="PackedScene" uid="uid://cmlvmxbrtdbao" path="res://scenes/players/player_class.tscn" id="1_l6tho"]
+
+[node name="Player2" unique_id=1500297690 instance=ExtResource("1_l6tho")]
+
+[node name="EnvironmentCollision" parent="." index="1" unique_id=128762953]
+debug_color = Color(0.12774861, 0, 0.8530297, 0.41960785)

@@ -5,11 +5,11 @@ const BASE_SPEED = 800.0
 const JUMP_VELOCITY = 2000
 const FALL_SPEED = 5
 
-#placeholder
+# with this will be able to control the name of the inputs
 var input_name
 
 @onready var interactable_collision: CollisionShape2D = $InteractableArea/InteractableCollision
-
+@export var test = "Test"
 enum Player_State{
 	Startup,
 	Active,
@@ -33,22 +33,6 @@ func change_state(newState):
 			pass
 		Player_State.End_Screen:
 			pass
-
-##this function can be removed!
-#func change_sprite():
-	#"""
-	#this will setup the sprite, 
-	#-> if this player is p_1, it  will hide p2_sprite
-	#-> if this player is p_2, it will hide p1_sprite
-	#"""	
-	#if is_p1:
-		#sprite = p1_sprite
-		#p2_sprite.hide()
-	#else:
-		#sprite = p2_sprite
-		#p1_sprite.hide()
-	#sprite.show()
-
 
 func _ready() -> void:
 	setup()
@@ -79,12 +63,4 @@ func _physics_process(delta: float) -> void:
 		
 		Player_State.End_Screen:
 			pass
-	
 	move_and_slide()
-
-
-#func _on_car_area_area_entered(area: Area2D) -> void:
-	#if "Food" in area.name:
-		#points += 1
-		#print("Points: " + str(points))
-	#print("Collision")

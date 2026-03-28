@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dyn4bytoirbrn"]
+
+[ext_resource type="PackedScene" uid="uid://ds382wnq6tuxb" path="res://scenes/rooms/room_class.tscn" id="1_scgta"]
+[ext_resource type="Script" uid="uid://dtdkqslb8ty2n" path="res://scripts/rooms_scripts/room_1.gd" id="2_hnbyo"]
+
+[node name="Room_1" unique_id=429381505 instance=ExtResource("1_scgta")]
+script = ExtResource("2_hnbyo")

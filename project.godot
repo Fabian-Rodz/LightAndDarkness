@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="LightAndDarkness"
-run/main_scene="res://scenes/players.tscn"
+run/main_scene="uid://djnvhckgwkv47"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
