@@ -2,14 +2,5 @@
 
 [ext_resource type="Script" uid="uid://bxpy1bdgpsgcn" path="res://scripts/rooms_scripts/room_class.gd" id="1_vefaa"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vefaa"]
-
 [node name="room_class" type="Node2D" unique_id=429381505]
 script = ExtResource("1_vefaa")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1528303112]
-position = Vector2(4, 373)
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1303857832]
-shape = SubResource("WorldBoundaryShape2D_vefaa")

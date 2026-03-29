@@ -1,5 +1,11 @@
 extends Node2D
 
+"""
+Notes :
+	TileMap Scale = 10
+	Text size = 100
+"""
+
 class_name Room
 """
 This node will be the superclass for ALL rooms.
@@ -39,6 +45,7 @@ func _on_any_area_exited(body: Node2D):
 	if body is Player:
 		body.current_area = null
 
+#this is just an example
 func _on_area_action(player: Player, area: Area2D):
 	# Depending of the area, the action will change
 	match area.name:
