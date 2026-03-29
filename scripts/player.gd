@@ -14,9 +14,11 @@ var current_area : Area2D = null
 
 @onready var interactable_collision: CollisionShape2D = $InteractableArea/InteractableCollision
 @export var test = "Test"
+@onready var sprite: AnimatedSprite2D = get_node("AnimatedSprite2D")
 enum Player_State{
 	Startup,
 	Active,
+	Airborne,
 	End_Screen
 }
 
@@ -35,6 +37,8 @@ func change_state(newState):
 			pass
 		Player_State.Active:
 			pass
+		Player_State.Airborne:
+			pass
 		Player_State.End_Screen:
 			pass
 
@@ -51,6 +55,12 @@ func _physics_process(delta: float) -> void:
 	# Set movement controls if player is p1 or p2
 	direction.x = Input.get_axis(input_name + "left", input_name + "right")
 	
+	# Flip sprite to match movement direction
+	if direction.x > 0:
+		sprite.flip_h = false
+	elif direction.x < 0:
+		sprite.flip_h = true
+	
 	# Gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta * FALL_SPEED
@@ -59,15 +69,29 @@ func _physics_process(delta: float) -> void:
 	match current_state:
 		Player_State.Startup:
 			pass
-
 		Player_State.Active:
+			velocity.x = move_toward(velocity.x,direction.x * BASE_SPEED, 10000 * delta)
+			# Animations
+			if is_on_floor():
+				if !direction:
+					sprite.play("idle")
+				else:
+					sprite.play("run")
+			elif not is_on_floor():
+				sprite.play("fall")
+				change_state(Player_State.Airborne)
 			if Input.is_action_just_pressed(input_name + "up") and is_on_floor():
 				velocity.y = -JUMP_VELOCITY 
-			velocity.x = move_toward(velocity.x,direction.x * BASE_SPEED, 10000 * delta)
+				sprite.play("jump")
+				change_state(Player_State.Airborne)
 			if Input.is_action_just_pressed(input_name + "interact"):
 				if current_area != null : 
 					current_area.action.emit(self)
-					
+		# Airborne state is mostly used so that the jump anim doesn't loop, not much else to it
+		Player_State.Airborne:
+			velocity.x = move_toward(velocity.x,direction.x * BASE_SPEED, 10000 * delta)
+			if is_on_floor():
+				change_state(Player_State.Active)
 		Player_State.End_Screen:
 			pass
 	move_and_slide()
