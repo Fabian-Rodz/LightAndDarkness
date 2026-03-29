@@ -4,6 +4,7 @@ This node holds the players
 extends Node2D
 @onready var player_1: CharacterBody2D = $Player1
 @onready var player_2: CharacterBody2D = $Player2
+@onready var multiplayer_camera: Camera2D = $MultiplayerCamera
 
 
 # 0 = startup, 1 = active, 2 = endscreen
@@ -18,6 +19,8 @@ func change_state_all(state:int):
 	player_2.change_state(p2_state)
 
 func start_game():
+	multiplayer_camera.add_target(player_1)
+	multiplayer_camera.add_target(player_2)
 	change_state_all(1)
 
 
