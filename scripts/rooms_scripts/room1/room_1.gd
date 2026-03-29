@@ -1,5 +1,8 @@
 extends Room
 
+
+
+
 var player_has_key = false
 
 func _process(_delta: float) -> void:
@@ -30,8 +33,7 @@ func area_door_action():
 		#put the door open layer
 		enviroment2_layer.set_cell(door_positions[0], 0, Vector2(12,11))
 		enviroment2_layer.set_cell(door_positions[1], 0, Vector2(12,10))
-
-		
+		print("door open!")
 		
 		
 func _on_area_action(player: Player, area: Area2D):
