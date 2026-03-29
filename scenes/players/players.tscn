@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://s4x8fmp33qge"]
+
+[ext_resource type="Script" uid="uid://b8gt5dnkf7yi6" path="res://scripts/players_manager.gd" id="1_j4k85"]
+[ext_resource type="PackedScene" uid="uid://8y6n0f51vg54" path="res://scenes/players/player_1.tscn" id="2_k38wr"]
+[ext_resource type="PackedScene" uid="uid://nbgj5x4xvh5e" path="res://scenes/players/player_2.tscn" id="3_rs3sp"]
+
+[node name="Players" type="Node2D" unique_id=1753759059]
+script = ExtResource("1_j4k85")
+
+[node name="Player1" parent="." unique_id=1500297690 instance=ExtResource("2_k38wr")]
+test = "test1"
+
+[node name="Player2" parent="." unique_id=866617092 instance=ExtResource("3_rs3sp")]
+position = Vector2(-1463, 2)
+test = "test24"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=395721969]
+position = Vector2(612, 41)
+zoom = Vector2(0.2, 0.2)
