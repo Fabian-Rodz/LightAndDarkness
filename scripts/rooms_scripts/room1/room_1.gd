@@ -7,6 +7,9 @@ func _process(_delta: float) -> void:
 
 # This function automatically connects all areas via signals to specific functions.
 func _ready():
+	
+	$"background music".add_to_group("music")
+	
 	for area in get_children():
 		if area is Area2D:
 			area.body_entered.connect(_on_any_area_entered.bind(area))

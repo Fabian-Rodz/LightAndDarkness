@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ds382wnq6tuxb" path="res://scenes/rooms/room_class.tscn" id="1_t8ffy"]
 [ext_resource type="Texture2D" uid="uid://hwvtewp6ppy6" path="res://assets/Dungeon Tile Set.png" id="2_ympbp"]
 [ext_resource type="FontFile" uid="uid://csvcvpcd6rn5g" path="res://assets/NormalFont.ttf" id="3_gde50"]
+[ext_resource type="AudioStream" uid="uid://oyg2f075m7xu" path="res://assets/music and sfx/ugjmainmenu.wav" id="4_gde50"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i6jxe"]
 texture = ExtResource("2_ympbp")
@@ -188,16 +189,16 @@ tile_set = SubResource("TileSet_6q3yf")
 
 [node name="Instructions" type="Label" parent="." index="3" unique_id=31423199]
 z_index = 1
-offset_left = -577.0
+offset_left = -687.0
 offset_top = -864.0
-offset_right = 745.0
+offset_right = 873.0
 offset_bottom = -177.0
 theme_override_fonts/font = ExtResource("3_gde50")
 theme_override_font_sizes/font_size = 100
 text = "EQUINOX
 
 
-Press 'spacebar' to start
+Press      'spacebar'  to  start
 "
 horizontal_alignment = 1
 
@@ -212,3 +213,8 @@ theme_override_font_sizes/font_size = 100
 text = "JAIL
 "
 horizontal_alignment = 1
+
+[node name="menu music" type="AudioStreamPlayer" parent="." index="5" unique_id=1960450649]
+stream = ExtResource("4_gde50")
+volume_db = 1.939
+autoplay = true

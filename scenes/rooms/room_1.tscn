@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cmwe5jdkj68fn" path="res://scripts/rooms_scripts/area.gd" id="3_fbq1s"]
 [ext_resource type="Texture2D" uid="uid://hwvtewp6ppy6" path="res://assets/Dungeon Tile Set.png" id="4_wodat"]
 [ext_resource type="FontFile" uid="uid://csvcvpcd6rn5g" path="res://assets/NormalFont.ttf" id="5_p8nu4"]
+[ext_resource type="AudioStream" uid="uid://brdnw7g4gc57e" path="res://assets/music and sfx/ugjloopingtrack.wav" id="6_v1x83"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p8nu4"]
 texture = ExtResource("4_wodat")
@@ -226,16 +227,16 @@ shape = SubResource("RectangleShape2D_p8nu4")
 
 [node name="Instructions" type="Label" parent="." index="3" unique_id=306933856]
 z_index = 1
-offset_left = -577.0
+offset_left = -642.0
 offset_top = -913.0
-offset_right = 367.0
+offset_right = 454.0
 offset_bottom = -226.0
 theme_override_fonts/font = ExtResource("5_p8nu4")
 theme_override_font_sizes/font_size = 100
-text = "Interact Buttons :
+text = "Interact    Buttons :
 
-        Player 1 -> \"E\"
-        Player2->\"/\"
+ Player    1     ->     \"E\"
+ Player   2     ->     \"/\"
 "
 
 [node name="ExitLevel" parent="." index="5" unique_id=669153406]
@@ -243,3 +244,6 @@ position = Vector2(2505, -138)
 
 [node name="CollisionShape2D" parent="ExitLevel" index="0" unique_id=222977649]
 position = Vector2(-4, -15)
+
+[node name="background music" type="AudioStreamPlayer" parent="." index="6" unique_id=145272142 groups=["music"]]
+stream = ExtResource("6_v1x83")
