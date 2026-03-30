@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dyn4bytoirbrn" path="res://scenes/rooms/room_1.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bx64cn7lbvckk" path="res://scenes/rooms/room_3.tscn" id="4_iywne"]
 [ext_resource type="PackedScene" uid="uid://bdow7vg7j18in" path="res://scenes/rooms/room_2.tscn" id="6_p57ef"]
-[ext_resource type="PackedScene" uid="uid://cy0uwr65y7io2" path="res://scenes/start_up_screen.tscn" id="7_u5sy4"]
-[ext_resource type="Script" uid="uid://dmqa2oskt4ofn" path="res://scripts/start_up_screen.gd" id="8_gee14"]
+[ext_resource type="PackedScene" path="res://scenes/start_up_screen.tscn" id="7_u5sy4"]
+[ext_resource type="Script" path="res://scripts/start_up_screen.gd" id="8_gee14"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iywne"]
 texture = ExtResource("2_lbhrr")
@@ -188,18 +188,6 @@ left_cam_limit = 4930.0
 right_cam_limit = 8270.0
 max_cam_zoom = 0.34
 min_cam_zoom = 0.34
-
-[node name="Room_4" parent="." unique_id=1360641979 node_paths=PackedStringArray("next_room") instance=ExtResource("6_p57ef")]
-position = Vector2(13239, 87)
-next_room = NodePath("../Room_3")
-p1_position = Vector2(11206, 172)
-p2_position = Vector2(13735, 172)
-top_cam_limit = -1830.0
-bottom_cam_limit = 400.0
-left_cam_limit = 10043.0
-right_cam_limit = 14820.0
-max_cam_zoom = 0.24
-min_cam_zoom = 0.24
 
 [node name="Players" parent="." unique_id=1753759059 instance=ExtResource("2_lnu2h")]
 z_index = 1

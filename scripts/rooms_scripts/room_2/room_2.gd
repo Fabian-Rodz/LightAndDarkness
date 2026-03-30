@@ -1,6 +1,7 @@
 extends Room
 
 func _ready():
+	build_layers()
 	for area in get_children():
 		if area is Area2D:
 			if area.name != "WinCondition":
@@ -9,7 +10,6 @@ func _ready():
 				area.action.connect(_on_area_action.bind(area))
 
 func build_layers():
-	var rotate_90 = 5 
 	$TileMap/Enviroment.set_cell(Vector2i(-6, -9), 0, Vector2i(2, 5))
 	$TileMap/Enviroment.set_cell(Vector2i(-5, -9), 0, Vector2i(2, 5))
 
@@ -27,11 +27,10 @@ func _on_area_action(player: Player, area: Area2D):
 					sprite.frame = 4
 		"Button": 
 			if area.revert_changes:
-					build_layers()
-					area.revert_changes = false
-					if sprite != null:
-						sprite.frame = 1
-					print('a')
+				build_layers()
+				area.revert_changes = false
+				if sprite != null:
+					sprite.frame = 1
 			else:
 				remove_layers()
 				if sprite != null:
@@ -48,7 +47,7 @@ func _on_path_follow_2d_stop_projectile_sig() -> void:
 	$Path2D/PathFollow2D/Light/Sprite2D.hide()
 	
 
-
 func _on_win_condition_area_entered(area: Area2D) -> void:
 	if area.name == "Light":
 		delete_door()
+		$WinCondition/Sprite2D.show()
