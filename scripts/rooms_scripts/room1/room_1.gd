@@ -40,5 +40,7 @@ func area_door_action():
 func _on_area_action(player: Player, area: Area2D):
 	# Depending of the area, the action will change
 	match area.name:
-		"Key":  area_key_action()
+		"Key": 
+			if not player_has_key:
+				area_key_action()
 		"Door" : area_door_action()

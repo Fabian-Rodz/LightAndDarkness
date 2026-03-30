@@ -243,7 +243,7 @@ rotates = false
 cubic_interp = false
 loop = false
 script = ExtResource("5_d8ufh")
-speed = 800.0
+speed = 1120.0
 
 [node name="Light" parent="Path2D/PathFollow2D" index="0" unique_id=147879970 instance=ExtResource("6_5bkl7")]
 position = Vector2(-18.818214, 1.3398399)
