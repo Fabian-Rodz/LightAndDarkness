@@ -1,6 +1,5 @@
 extends Room
 
-signal shoot_light
 
 # This function automatically connects all areas via signals to specific functions.
 func _ready():
@@ -64,5 +63,4 @@ func delete_door():
 
 func _on_win_condition_area_entered(area: Area2D) -> void:
 	if area.name == "Light":
-		print('LIIIIIGHT')
 		delete_door()

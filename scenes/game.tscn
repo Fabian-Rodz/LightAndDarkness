@@ -166,6 +166,18 @@ right_cam_limit = 3390.0
 max_cam_zoom = 0.5
 min_cam_zoom = 0.2
 
+[node name="Room_2" parent="." unique_id=806554882 node_paths=PackedStringArray("next_room") instance=ExtResource("6_p57ef")]
+position = Vector2(13239, 87)
+next_room = NodePath("../Room_3")
+p1_position = Vector2(11206, 172)
+p2_position = Vector2(13735, 172)
+top_cam_limit = -1830.0
+bottom_cam_limit = 400.0
+left_cam_limit = 10043.0
+right_cam_limit = 14820.0
+max_cam_zoom = 0.24
+min_cam_zoom = 0.24
+
 [node name="Room_3" parent="." unique_id=416405184 instance=ExtResource("4_iywne")]
 position = Vector2(6520, -874)
 p1_position = Vector2(6536, -1064)
@@ -205,11 +217,14 @@ right_cam_limit = -1260.0
 max_cam_zoom = 0.4
 min_cam_zoom = 0.4
 
+[node name="Players" parent="." unique_id=1753759059 instance=ExtResource("2_lnu2h")]
+z_index = 1
+
 [connection signal="change_cam_limits" from="Room_1" to="." method="_set_up_cam_limits"]
 [connection signal="change_room" from="Room_1" to="." method="_set_up_players_positions"]
-[connection signal="change_cam_limits" from="Room_3" to="." method="_set_up_cam_limits"]
-[connection signal="change_room" from="Room_3" to="." method="_set_up_players_positions"]
 [connection signal="change_cam_limits" from="Room_2" to="." method="_set_up_cam_limits"]
 [connection signal="change_room" from="Room_2" to="." method="_set_up_players_positions"]
 [connection signal="change_cam_limits" from="start_up_screen" to="." method="_set_up_cam_limits"]
 [connection signal="change_room" from="start_up_screen" to="." method="_set_up_players_positions"]
+[connection signal="change_cam_limits" from="Room_3" to="." method="_set_up_cam_limits"]
+[connection signal="change_room" from="Room_3" to="." method="_set_up_players_positions"]

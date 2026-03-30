@@ -1,6 +1,8 @@
 extends Node2D
 class_name Room
 
+signal shoot_light
+
 """
 Notes :
 	TileMap Scale = 10
