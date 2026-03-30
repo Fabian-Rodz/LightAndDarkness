@@ -22,12 +22,14 @@ func _set_up_players_positions(p1_pos, p2_pos):
 
 
 
-func _set_up_cam_limits(top: Variant, bottom: Variant, left: Variant, right: Variant) -> void:
+func _set_up_cam_limits(top: Variant, bottom: Variant, left: Variant, right: Variant, min_zoom: Variant, max_zoom: Variant) -> void:
 	if camera:
 		print("Camera found")
 		camera.limit_top = top
 		camera.limit_bottom = bottom
 		camera.limit_left = left
 		camera.limit_right = right
+		camera.min_zoom = min_zoom
+		camera.max_zoom = max_zoom
 	else:
 		print("No camera")

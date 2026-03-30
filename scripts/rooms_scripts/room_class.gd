@@ -25,9 +25,11 @@ using different nodes, logic, and Area2D scenarios.
 @export var bottom_cam_limit: float
 @export var left_cam_limit: float
 @export var right_cam_limit: float
+@export var max_cam_zoom: float
+@export var min_cam_zoom: float
 
 signal change_room(p1_pos, p2_pos)
-signal change_cam_limits(top,bottom,left,right)
+signal change_cam_limits(top,bottom,left,right, min_zoom, max_zoom)
 
 # this functions is used in game_manager.gd
 func set_players_reference(p1 : Player, p2 : Player):
@@ -72,4 +74,4 @@ func _on_exit_level_body_entered(body: Node2D) -> void:
 	await $Fade.fade(1,1.5).finished
 	$Fade.hide()
 	change_room.emit(next_room.p1_position, next_room.p2_position)
-	change_cam_limits.emit(next_room.top_cam_limit, next_room.bottom_cam_limit, next_room.left_cam_limit, next_room.right_cam_limit)
+	change_cam_limits.emit(next_room.top_cam_limit, next_room.bottom_cam_limit, next_room.left_cam_limit, next_room.right_cam_limit, next_room.min_cam_zoom, next_room.max_cam_zoom)

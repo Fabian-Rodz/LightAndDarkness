@@ -157,15 +157,28 @@ tile_set = SubResource("TileSet_p57ef")
 position = Vector2(745, 190)
 next_room = NodePath("../Room_3")
 p2_position = Vector2(575, -80)
+bottom_cam_limit = 480.0
+left_cam_limit = -3250.0
+right_cam_limit = 3390.0
+max_cam_zoom = 0.5
+min_cam_zoom = 0.2
 
 [node name="Room_3" parent="." unique_id=416405184 node_paths=PackedStringArray("next_room") instance=ExtResource("4_iywne")]
 position = Vector2(6520, -874)
 next_room = NodePath("../Room_1")
 p1_position = Vector2(6536, -1064)
 p2_position = Vector2(6536, 64)
+top_cam_limit = -1510.0
+bottom_cam_limit = 400.0
+left_cam_limit = 4930.0
+right_cam_limit = 8270.0
+max_cam_zoom = 0.34
+min_cam_zoom = 0.34
 
 [node name="Players" parent="." unique_id=1753759059 instance=ExtResource("2_lnu2h")]
 z_index = 1
 
+[connection signal="change_cam_limits" from="Room_1" to="." method="_set_up_cam_limits"]
 [connection signal="change_room" from="Room_1" to="." method="_set_up_players_positions"]
+[connection signal="change_cam_limits" from="Room_3" to="." method="_set_up_cam_limits"]
 [connection signal="change_room" from="Room_3" to="." method="_set_up_players_positions"]
