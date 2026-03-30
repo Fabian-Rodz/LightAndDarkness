@@ -295,3 +295,5 @@ shape = SubResource("RectangleShape2D_5bkl7")
 [connection signal="shoot_light" from="." to="Path2D/PathFollow2D" method="fire"]
 [connection signal="stop_projectile_sig" from="Path2D/PathFollow2D" to="." method="_on_path_follow_2d_stop_projectile_sig"]
 [connection signal="reset_progress_ratio" from="Path2D/PathFollow2D/Light" to="Path2D/PathFollow2D" method="stop_projectile"]
+[connection signal="body_exited" from="Button" to="Button" method="handle_input" binds= ["released"]]
+[connection signal="body_exited" from="Button_2" to="Button_2" method="handle_input" binds= ["released"]]
