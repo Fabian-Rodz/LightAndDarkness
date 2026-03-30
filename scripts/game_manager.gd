@@ -14,3 +14,7 @@ func set_up_all_rooms():
 
 func _ready() -> void:
 	set_up_all_rooms()
+
+func _set_up_players_positions(p1_pos, p2_pos):
+	player_1.position = p1_pos
+	player_2.position = p2_pos

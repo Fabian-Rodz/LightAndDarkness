@@ -87,6 +87,17 @@ func _physics_process(delta: float) -> void:
 			if Input.is_action_just_pressed(input_name + "interact"):
 				if current_area != null : 
 					current_area.action.emit(self)
+			if Input.is_action_pressed(input_name + "interact"):
+				if current_area != null:
+					if current_area.hold == true:
+						current_area.action.emit(self)
+			if Input.is_action_just_released(input_name + "interact"):
+				if current_area != null:
+					if current_area.hold:
+						if current_area.will_revert_changes:
+							current_area.revert_changes = true
+							current_area.action.emit(self)
+
 		# Airborne state is mostly used so that the jump anim doesn't loop, not much else to it
 		Player_State.Airborne:
 			velocity.x = move_toward(velocity.x,direction.x * BASE_SPEED, 10000 * delta)
