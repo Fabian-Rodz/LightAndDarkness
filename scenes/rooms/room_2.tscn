@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://dyg3fwxcpi0w3" path="res://scripts/rooms_scripts/light.gd" id="5_0hwry"]
 [ext_resource type="Texture2D" uid="uid://jdn5w7eu3nk3" path="res://assets/pixilart-sprite - Kopi.png" id="5_tjvhs"]
 [ext_resource type="Texture2D" uid="uid://cmiw82qe7yl16" path="res://assets/S001_nyknck.png" id="6_0hwry"]
+[ext_resource type="Texture2D" uid="uid://c2x4dxofkasaf" path="res://assets/Torch Animated.png" id="9_np14n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ar6ir"]
 texture = ExtResource("2_3e1ps")
@@ -61,8 +62,11 @@ texture = ExtResource("2_3e1ps")
 8:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:4/0 = 0
 1:5/0 = 0
+1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:5/0 = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:5/0 = 0
 5:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:5/0 = 0
@@ -73,8 +77,11 @@ texture = ExtResource("2_3e1ps")
 11:5/0 = 0
 12:5/0 = 0
 1:6/0 = 0
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:6/0 = 0
+2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:6/0 = 0
+3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:6/0 = 0
 7:6/0 = 0
 8:6/0 = 0
@@ -85,8 +92,11 @@ texture = ExtResource("2_3e1ps")
 11:6/0 = 0
 12:6/0 = 0
 1:7/0 = 0
+1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:7/0 = 0
+2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:7/0 = 0
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:7/0 = 0
 7:7/0 = 0
 8:7/0 = 0
@@ -227,7 +237,7 @@ metadata/_edit_lock_ = true
 
 [node name="Enviroment" type="TileMapLayer" parent="TileMap" index="0" unique_id=462237290]
 scale = Vector2(9.999999, 9.999999)
-tile_map_data = PackedByteArray("AADs/wEAAAACAAEAAADt/wEAAAACAAEAAADu/wEAAAACAAEAAADv/wEAAAACAAEAAADw/wEAAAACAAEAAADx/wEAAAACAAEAAADy/wEAAAACAAEAAADz/wEAAAACAAEAAAD0/wEAAAACAAEAAAD1/wEAAAACAAEAAAD2/wEAAAACAAEAAAD3/wEAAAACAAEAAAD4/wEAAAACAAEAAAD5/wEAAAACAAEAAAD6/wEAAAACAAEAAAD7/wEAAAACAAEAAAD8/wEAAAACAAEAAAD9/wEAAAACAAEAAAD+/wEAAAACAAEAAAD//wEAAAACAAEAAAAAAAEAAAACAAEAAAABAAEAAAACAAEAAAACAAEAAAACAAEAAAADAAEAAAACAAEAAAAEAAEAAAACAAEAAAAFAAEAAAACAAEAAAAGAAEAAAACAAEAAAAHAAEAAAACAAEAAADs//T/AAAFAAEAAADs//X/AAABAAIAAADs//b/AAABAAIAAADs//f/AAABAAIAAADs//j/AAABAAIAAADs//n/AAABAAIAAADs//r/AAABAAIAAADs//v/AAABAAIAAADs//z/AAABAAIAAADs//3/AAABAAIAAADs//7/AAABAAIAAADs////AAANAAoAAADs/wAAAAANAAsAAAAIAAEAAAACAAEAAAAJAAEAAAACAAEAAAAJAP//AAANAAoAAAAJAAAAAAANAAsAAAAJAPT/AAAGAAEAAAAJAP7/AAADAAIAAAD5//T/AAAGAAEAAAD6//X/AAACAAEAAAD6//b/AAACAAUAAAD6//n/AAAIAAEAAAD6//r/AAAIAAIAAAD6//v/AAAIAAMAAAD6//z/AAAKAAMAAAD6//3/AAAKAAQAAAD6//7/AAAJAAMAADD6////AAAJAAIAADD7//X/AAACAAEAAAD7//b/AAACAAUAAAD7//n/AAAJAAEAAAD7//r/AAAJAAIAAAD7//v/AAAJAAMAAAD7//z/AAALAAMAAAD7//3/AAALAAQAAAD7//7/AAAIAAMAADD7////AAAIAAIAADD8//T/AAAFAAEAAADz//T/AAACAAEAAAD0//T/AAACAAEAAAD1//T/AAACAAEAAAD2//T/AAACAAEAAAD3//T/AAACAAEAAAD4//T/AAACAAEAAAD5//X/AAAFAAUAAAD6/wAAAAAJAAEAADD7/wAAAAAIAAEAADD8//X/AAAGAAUAAAD9//T/AAACAAEAAAD+//T/AAACAAEAAAD///T/AAACAAEAAAAAAPT/AAACAAEAAAABAPT/AAACAAEAAAACAPT/AAACAAEAAAADAPT/AAACAAEAAAAEAPT/AAACAAEAAADt//T/AAACAAEAAADu//T/AAACAAEAAADv//T/AAACAAEAAADw//T/AAACAAEAAADx//T/AAACAAEAAADy//T/AAACAAEAAAAFAPT/AAACAAEAAAAGAPT/AAACAAEAAAAHAPT/AAACAAEAAAAIAPT/AAACAAEAAAAJAPX/AAADAAIAAAAJAPb/AAADAAIAAAAJAPf/AAADAAIAAAAJAPj/AAADAAIAAAAJAPn/AAADAAIAAAAJAPr/AAADAAIAAAAJAPv/AAADAAIAAAAJAPz/AAADAAIAAAAJAP3/AAADAAIAAADr/wEAAAACAAEAAADq/wEAAAACAAEAAADp/wEAAAACAAEAAADo/wEAAAACAAEAAADn/wEAAAACAAEAAADm/wEAAAACAAEAAADl/wEAAAACAAEAAADk/wEAAAACAAEAAADj/wEAAAACAAEAAADi/wEAAAACAAEAAADh/wEAAAACAAEAAADg/wEAAAACAAEAAADr//7/AAACAAEAAADq//7/AAACAAEAAADp//7/AAACAAEAAADo//7/AAACAAEAAADn//7/AAACAAEAAADm//7/AAACAAEAAADl//7/AAACAAEAAADk//7/AAACAAEAAADj//7/AAACAAEAAADi//7/AAACAAEAAADh//7/AAACAAEAAAD6//j/AAACAAUAAAD7//j/AAACAAUAAAD6//f/AAACAAcAAAD7//f/AAACAAcAAAA=")
+tile_map_data = PackedByteArray("AADs/wEAAAACAAEAAADt/wEAAAACAAEAAADu/wEAAAACAAEAAADv/wEAAAACAAEAAADw/wEAAAACAAEAAADx/wEAAAACAAEAAADy/wEAAAACAAEAAADz/wEAAAACAAEAAAD0/wEAAAACAAEAAAD1/wEAAAACAAEAAAD2/wEAAAACAAEAAAD3/wEAAAACAAEAAAD4/wEAAAACAAEAAAD5/wEAAAACAAEAAAD6/wEAAAACAAEAAAD7/wEAAAACAAEAAAD8/wEAAAACAAEAAAD9/wEAAAACAAEAAAD+/wEAAAACAAEAAAD//wEAAAACAAEAAAAAAAEAAAACAAEAAAABAAEAAAACAAEAAAACAAEAAAACAAEAAAADAAEAAAACAAEAAAAEAAEAAAACAAEAAAAFAAEAAAACAAEAAAAGAAEAAAACAAEAAAAHAAEAAAACAAEAAADs//T/AAAFAAEAAADs//X/AAABAAIAAADs//b/AAABAAIAAADs//f/AAABAAIAAADs//j/AAABAAIAAADs//n/AAABAAIAAADs//r/AAABAAIAAADs//v/AAABAAIAAADs//z/AAABAAIAAADs//3/AAABAAIAAADs//7/AAABAAIAAADs////AAANAAoAAADs/wAAAAANAAsAAAAIAAEAAAACAAEAAAAJAAEAAAACAAEAAAAJAP//AAANAAoAAAAJAAAAAAANAAsAAAAJAPT/AAAGAAEAAAAJAP7/AAADAAIAAAD5//T/AAAGAAEAAAD6//X/AAACAAEAAAD6//n/AAAIAAEAAAD6//r/AAAIAAIAAAD6//v/AAAIAAMAAAD6//z/AAAKAAMAAAD6//3/AAAKAAQAAAD6//7/AAAJAAMAADD6////AAAJAAIAADD7//X/AAACAAEAAAD7//n/AAAJAAEAAAD7//r/AAAJAAIAAAD7//v/AAAJAAMAAAD7//z/AAALAAMAAAD7//3/AAALAAQAAAD7//7/AAAIAAMAADD7////AAAIAAIAADD8//T/AAAFAAEAAADz//T/AAACAAEAAAD0//T/AAACAAEAAAD1//T/AAACAAEAAAD2//T/AAACAAEAAAD3//T/AAACAAEAAAD4//T/AAACAAEAAAD5//X/AAAFAAUAAAD6/wAAAAAJAAEAADD7/wAAAAAIAAEAADD8//X/AAAGAAUAAAD9//T/AAACAAEAAAD+//T/AAACAAEAAAD///T/AAACAAEAAAAAAPT/AAACAAEAAAABAPT/AAACAAEAAAACAPT/AAACAAEAAAADAPT/AAACAAEAAAAEAPT/AAACAAEAAADt//T/AAACAAEAAADu//T/AAACAAEAAADv//T/AAACAAEAAADw//T/AAACAAEAAADx//T/AAACAAEAAADy//T/AAACAAEAAAAFAPT/AAACAAEAAAAGAPT/AAACAAEAAAAHAPT/AAACAAEAAAAIAPT/AAACAAEAAAAJAPX/AAADAAIAAAAJAPb/AAADAAIAAAAJAPf/AAADAAIAAAAJAPj/AAADAAIAAAAJAPn/AAADAAIAAAAJAPr/AAADAAIAAAAJAPv/AAADAAIAAAAJAPz/AAADAAIAAAAJAP3/AAADAAIAAADr/wEAAAACAAEAAADq/wEAAAACAAEAAADp/wEAAAACAAEAAADo/wEAAAACAAEAAADn/wEAAAACAAEAAADm/wEAAAACAAEAAADl/wEAAAACAAEAAADk/wEAAAACAAEAAADj/wEAAAACAAEAAADi/wEAAAACAAEAAADh/wEAAAACAAEAAADg/wEAAAACAAEAAADr//7/AAACAAEAAADq//7/AAACAAEAAADp//7/AAACAAEAAADo//7/AAACAAEAAADn//7/AAACAAEAAADm//7/AAACAAEAAADl//7/AAACAAEAAADk//7/AAACAAEAAADj//7/AAACAAEAAADi//7/AAACAAEAAADh//7/AAACAAEAAAD6//j/AAACAAUAAAD7//j/AAACAAUAAAD6//b/AAACAAUAAAD7//b/AAACAAUAAAA=")
 tile_set = SubResource("TileSet_0g03g")
 
 [node name="LightButton" type="Area2D" parent="." index="3" unique_id=375504137]
@@ -247,23 +257,24 @@ frame = 1
 region_enabled = true
 region_rect = Rect2(-0.70854187, 0.52256775, 319.92578, 61.30983)
 
-[node name="Button" type="Area2D" parent="." index="4" unique_id=561431044]
-position = Vector2(763, 15)
+[node name="Button" type="Area2D" parent="." index="4" unique_id=702091013]
+position = Vector2(635, -24)
 script = ExtResource("3_ar6ir")
 hold = true
 will_revert_changes = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Button" index="0" unique_id=1688321308]
-shape = SubResource("RectangleShape2D_km8ef")
-
-[node name="Sprite2D" type="Sprite2D" parent="Button" index="1" unique_id=284104512]
-position = Vector2(-10, -2)
+[node name="Sprite2D" type="Sprite2D" parent="Button" index="0" unique_id=284104512]
+position = Vector2(5.4953613, 1)
 scale = Vector2(4.3014383, 4.327869)
 texture = ExtResource("5_tjvhs")
 hframes = 5
 frame = 1
 region_enabled = true
 region_rect = Rect2(-0.70854187, 0.52256775, 319.92578, 61.30983)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button" index="1" unique_id=1688321308]
+position = Vector2(15.495361, 3)
+shape = SubResource("RectangleShape2D_km8ef")
 
 [node name="Path2D" type="Path2D" parent="." index="5" unique_id=1844412128]
 curve = SubResource("Curve2D_nu3hr")
@@ -302,6 +313,21 @@ script = ExtResource("3_ar6ir")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WinCondition" index="0" unique_id=908550116]
 position = Vector2(-6, -5)
 shape = SubResource("RectangleShape2D_np14n")
+
+[node name="Sprite2D" type="Sprite2D" parent="WinCondition" index="1" unique_id=975179634]
+visible = false
+position = Vector2(-4, -9)
+scale = Vector2(11.421275, 6.790132)
+texture = ExtResource("9_np14n")
+hframes = 4
+vframes = 2
+
+[node name="Sprite2D2" type="Sprite2D" parent="WinCondition" index="2" unique_id=1030723829]
+position = Vector2(-24, 60)
+scale = Vector2(11.421275, 6.790132)
+texture = ExtResource("9_np14n")
+region_enabled = true
+region_rect = Rect2(23.93095, 30.246437, 12.43808, 24.547398)
 
 [connection signal="shoot_light" from="." to="Path2D/PathFollow2D" method="fire"]
 [connection signal="stop_projectile_sig" from="Path2D/PathFollow2D" to="." method="_on_path_follow_2d_stop_projectile_sig"]

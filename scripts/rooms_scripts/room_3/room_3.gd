@@ -64,3 +64,4 @@ func delete_door():
 func _on_win_condition_area_entered(area: Area2D) -> void:
 	if area.name == "Light":
 		delete_door()
+		$WinCondition/Sprite2D.show()

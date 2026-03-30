@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cr0jw1imwa6cw" path="res://scenes/rooms/light.tscn" id="6_5bkl7"]
 [ext_resource type="Texture2D" uid="uid://cmiw82qe7yl16" path="res://assets/S001_nyknck.png" id="8_wmuqe"]
 [ext_resource type="Texture2D" uid="uid://jdn5w7eu3nk3" path="res://assets/pixilart-sprite - Kopi.png" id="8_wynrr"]
+[ext_resource type="Texture2D" uid="uid://c2x4dxofkasaf" path="res://assets/Torch Animated.png" id="9_wmuqe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0g03g"]
 texture = ExtResource("3_ar6ir")
@@ -301,6 +302,21 @@ script = ExtResource("4_ahsqd")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WinCondition" index="0" unique_id=1983498301]
 position = Vector2(-6, -5)
 shape = SubResource("RectangleShape2D_wynrr")
+
+[node name="Sprite2D" type="Sprite2D" parent="WinCondition" index="1" unique_id=690342653]
+visible = false
+position = Vector2(-4, -9)
+scale = Vector2(11.421275, 6.790132)
+texture = ExtResource("9_wmuqe")
+hframes = 4
+vframes = 2
+
+[node name="Sprite2D2" type="Sprite2D" parent="WinCondition" index="2" unique_id=1212617785]
+position = Vector2(-24, 60)
+scale = Vector2(11.421275, 6.790132)
+texture = ExtResource("9_wmuqe")
+region_enabled = true
+region_rect = Rect2(23.93095, 30.246437, 12.43808, 24.547398)
 
 [connection signal="shoot_light" from="." to="Path2D/PathFollow2D" method="fire"]
 [connection signal="stop_projectile_sig" from="Path2D/PathFollow2D" to="." method="_on_path_follow_2d_stop_projectile_sig"]
