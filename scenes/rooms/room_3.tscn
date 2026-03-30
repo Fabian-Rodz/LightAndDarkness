@@ -191,6 +191,9 @@ size = Vector2(207, 183)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5bkl7"]
 size = Vector2(222, 211)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wynrr"]
+size = Vector2(218, 182)
+
 [node name="room_3" unique_id=429381505 instance=ExtResource("1_3e1ps")]
 script = ExtResource("2_ar6ir")
 p1_position = Vector2(0, 239)
@@ -206,9 +209,6 @@ right_cam_limit = 1745.0
 scale = Vector2(9.999999, 9.999999)
 tile_map_data = PackedByteArray("AAAAAAcAAAACAAEAAAABAAcAAAACAAEAAAACAAcAAAACAAEAAAADAAcAAAACAAEAAAAEAAcAAAACAAEAAAAFAAcAAAACAAEAAAAGAAcAAAACAAEAAAAHAAcAAAACAAEAAAAIAAcAAAACAAEAAAAJAAcAAAACAAEAAAAKAAcAAAACAAEAAAD//wcAAAACAAEAAAD+/wcAAAACAAEAAAD9/wcAAAACAAEAAAD8/wcAAAACAAEAAAD7/wcAAAACAAEAAAD6/wcAAAACAAEAAAD5/wcAAAACAAEAAAD4/wcAAAACAAEAAAD3/wcAAAACAAEAAAD2/wcAAAACAAEAAAD2/wQAAAABAAIAAAD2/wMAAAABAAIAAAD2/wIAAAABAAIAAAD2/wEAAAABAAIAAAD2/wAAAAABAAIAAAD2////AAABAAIAAAD2//7/AAABAAIAAAAKAAQAAAADAAIAAAAKAAMAAAADAAIAAAAKAAIAAAADAAIAAAAKAAEAAAADAAIAAAAKAAAAAAADAAIAAAAKAP//AAADAAIAAAAKAP7/AAADAAIAAAAKAAYAAAANAAsAAAAKAAUAAAANAAoAAAD4/wIAAAABAAkAAAD7/wIAAAABAAkAAAD+/wIAAAABAAkAAAABAAIAAAABAAkAAAAEAAIAAAABAAkAAAAHAAIAAAABAAkAAAAIAAIAAAABAAkAAAD2/wYAAAANAAsAAAD2/wUAAAANAAoAAAD3//3/AAACAAEAAAD4//3/AAACAAEAAAD5//3/AAACAAEAAAD6//3/AAACAAEAAAD7//3/AAACAAEAAAD8//3/AAACAAEAAAAJAP3/AAACAAEAAAAIAP3/AAACAAEAAAAHAP3/AAACAAEAAAAGAP3/AAACAAEAAAAFAP3/AAACAAEAAAADAPz/AAACAAEAAAACAPz/AAACAAEAAAABAPz/AAACAAEAAAAAAPz/AAACAAEAAAD///z/AAACAAEAAAD+//z/AAACAAEAAAD9//z/AAACAAEAAAAEAP3/AAACAAEAAAD8//z/AAAFAAEAAAAEAPz/AAAGAAEAAAA=")
 tile_set = SubResource("TileSet_km8ef")
-
-[node name="Fade" parent="." index="1" unique_id=1799504811]
-visible = false
 
 [node name="ExitLevel" parent="." index="2" unique_id=669153406]
 position = Vector2(1897, 989)
@@ -292,8 +292,19 @@ region_rect = Rect2(-0.70854187, 0.52256775, 319.92578, 61.30983)
 position = Vector2(-5, 0)
 shape = SubResource("RectangleShape2D_5bkl7")
 
+[node name="WinCondition" type="Area2D" parent="." index="7" unique_id=1419929946]
+position = Vector2(-1269, 2)
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("4_ahsqd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WinCondition" index="0" unique_id=1983498301]
+position = Vector2(-6, -5)
+shape = SubResource("RectangleShape2D_wynrr")
+
 [connection signal="shoot_light" from="." to="Path2D/PathFollow2D" method="fire"]
 [connection signal="stop_projectile_sig" from="Path2D/PathFollow2D" to="." method="_on_path_follow_2d_stop_projectile_sig"]
 [connection signal="reset_progress_ratio" from="Path2D/PathFollow2D/Light" to="Path2D/PathFollow2D" method="stop_projectile"]
 [connection signal="body_exited" from="Button" to="Button" method="handle_input" binds= ["released"]]
 [connection signal="body_exited" from="Button_2" to="Button_2" method="handle_input" binds= ["released"]]
+[connection signal="area_entered" from="WinCondition" to="." method="_on_win_condition_area_entered"]
