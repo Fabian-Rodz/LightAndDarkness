@@ -30,6 +30,9 @@ using different nodes, logic, and Area2D scenarios.
 @export var max_cam_zoom: float
 @export var min_cam_zoom: float
 
+@onready var puzzle_sound = get_parent().get_node_or_null("PuzzleSolved")
+@onready var light_sound = get_parent().get_node_or_null("LightSound")
+
 var can_press_start = true
 
 signal change_room(p1_pos, p2_pos)

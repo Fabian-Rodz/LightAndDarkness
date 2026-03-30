@@ -25,6 +25,7 @@ func _on_area_action(player: Player, area: Area2D):
 		
 			"LightButton" : 
 				shoot_light.emit()
+				light_sound.play()
 				if sprite:
 					sprite.frame = 4
 			"Button_2" :
@@ -65,3 +66,4 @@ func _on_win_condition_area_entered(area: Area2D) -> void:
 	if area.name == "Light":
 		delete_door()
 		$WinCondition/Sprite2D.show()
+		puzzle_sound.play()

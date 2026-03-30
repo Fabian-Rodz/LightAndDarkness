@@ -18,6 +18,7 @@ func area_key_action():
 	var items_layer = $TileMap/Items
 	var key_position = Vector2i(-22, -5) 
 	items_layer.set_cell(key_position, -1)
+	puzzle_sound.play()
 	print("Key picked up!")
 
 func area_door_action():

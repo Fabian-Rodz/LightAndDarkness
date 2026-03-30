@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://dyn4bytoirbrn" path="res://scenes/rooms/room_1.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bx64cn7lbvckk" path="res://scenes/rooms/room_3.tscn" id="4_iywne"]
 [ext_resource type="PackedScene" uid="uid://bdow7vg7j18in" path="res://scenes/rooms/room_2.tscn" id="6_p57ef"]
-[ext_resource type="PackedScene" uid="uid://cy0uwr65y7io2" path="res://scenes/start_up_screen.tscn" id="7_u5sy4"]
-[ext_resource type="Script" uid="uid://dmqa2oskt4ofn" path="res://scripts/start_up_screen.gd" id="8_gee14"]
-[ext_resource type="PackedScene" uid="uid://cw1qib58t6iln" path="res://scenes/end_screen.tscn" id="9_0tnpc"]
 [ext_resource type="PackedScene" path="res://scenes/start_up_screen.tscn" id="7_u5sy4"]
-[ext_resource type="Script" path="res://scripts/start_up_screen.gd" id="8_gee14"]
+[ext_resource type="Script" uid="uid://dmqa2oskt4ofn" path="res://scripts/start_up_screen.gd" id="8_gee14"]
+[ext_resource type="PackedScene" path="res://scenes/end_screen.tscn" id="9_0tnpc"]
+[ext_resource type="AudioStream" uid="uid://cdqbbu4jb27r5" path="res://assets/puzzle solved sound effect.wav" id="10_vtaks"]
+[ext_resource type="AudioStream" uid="uid://b41yadlt1gocb" path="res://assets/energy charge sound effect.wav" id="11_kvpfn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iywne"]
 texture = ExtResource("2_lbhrr")
@@ -220,6 +220,14 @@ left_cam_limit = 6920.0
 right_cam_limit = 9329.0
 max_cam_zoom = 0.4
 min_cam_zoom = 0.4
+
+[node name="PuzzleSolved" type="AudioStreamPlayer" parent="." unique_id=495543153]
+stream = ExtResource("10_vtaks")
+volume_db = 1.0
+
+[node name="LightSound" type="AudioStreamPlayer" parent="." unique_id=1451435911]
+stream = ExtResource("11_kvpfn")
+volume_db = 1.0
 
 [connection signal="change_cam_limits" from="Room_1" to="." method="_set_up_cam_limits"]
 [connection signal="change_room" from="Room_1" to="." method="_set_up_players_positions"]
