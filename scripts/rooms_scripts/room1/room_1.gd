@@ -1,6 +1,6 @@
 extends Room
 
-var player_has_key = true
+var player_has_key = false
 
 func _process(_delta: float) -> void:
 	pass
