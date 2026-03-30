@@ -6,10 +6,9 @@ signal shoot_light
 func _ready():
 	for area in get_children():
 		if area is Area2D:
-			if area.name != "WinCondition":
-				area.body_entered.connect(_on_any_area_entered.bind(area))
-				area.body_exited.connect(_on_any_area_exited)
-				area.action.connect(_on_area_action.bind(area))
+			area.body_entered.connect(_on_any_area_entered.bind(area))
+			area.body_exited.connect(_on_any_area_exited)
+			area.action.connect(_on_area_action.bind(area))
 			
 func build_layer_again_2():
 	$TileMap/Enviroment.set_cell(Vector2i(8, 2), 0, Vector2(1,9))
@@ -55,14 +54,3 @@ func _on_path_follow_2d_stop_projectile_sig() -> void:
 	$LightButton/Sprite2D.frame = 1
 	$Path2D/PathFollow2D/Light/Sprite2D.hide()
 	
-func delete_door():
-	$TileMap/Enviroment.set_cell(Vector2i(10, 5), -1)
-	$TileMap/Enviroment.set_cell(Vector2i(10, 6), -1)
-	$TileMap/Enviroment.set_cell(Vector2i(10, 5), 0, Vector2(12,10))
-	$TileMap/Enviroment.set_cell(Vector2i(10, 6), 0, Vector2(12,11))
-
-
-func _on_win_condition_area_entered(area: Area2D) -> void:
-	if area.name == "Light":
-		print('LIIIIIGHT')
-		delete_door()

@@ -3,6 +3,7 @@ extends Node2D
 @onready var players = get_node_or_null("Players")
 @onready var player_1 = players.get_node_or_null("Player1")
 @onready var player_2 = players.get_node_or_null("Player2")
+@onready var camera: Camera2D = players.get_node_or_null("MultiplayerCamera")
 
 """
 This will automatically ensure that ALL the rooms have references for each player.
@@ -18,3 +19,17 @@ func _ready() -> void:
 func _set_up_players_positions(p1_pos, p2_pos):
 	player_1.position = p1_pos
 	player_2.position = p2_pos
+
+
+
+func _set_up_cam_limits(top: Variant, bottom: Variant, left: Variant, right: Variant, min_zoom: Variant, max_zoom: Variant) -> void:
+	if camera:
+		print("Camera found")
+		camera.limit_top = top
+		camera.limit_bottom = bottom
+		camera.limit_left = left
+		camera.limit_right = right
+		camera.min_zoom = min_zoom
+		camera.max_zoom = max_zoom
+	else:
+		print("No camera")

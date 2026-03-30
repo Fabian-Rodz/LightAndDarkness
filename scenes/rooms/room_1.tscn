@@ -183,6 +183,10 @@ size = Vector2(350, 302)
 script = ExtResource("2_hnbyo")
 p1_position = Vector2(-576, -80)
 p2_position = Vector2(575, 80)
+top_cam_limit = -1000000.0
+bottom_cam_limit = 330.0
+left_cam_limit = -3970.0
+right_cam_limit = 3690.0
 
 [node name="TileMap" type="Node2D" parent="." index="0" unique_id=1069287025]
 
