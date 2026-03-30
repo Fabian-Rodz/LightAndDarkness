@@ -9,7 +9,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
-		if next_room.name == "Room_1":
+		if can_press_start:
+			can_press_start = false
 			await $Fade.fade(1,1.5).finished
 			$Fade.hide()
 			change_room.emit(next_room.p1_position, next_room.p2_position)
