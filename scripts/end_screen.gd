@@ -9,6 +9,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
+		print("Can press?: " + str(can_press_start))
 		if can_press_start:
 			can_press_start = false
 			await $Fade.fade(1,1.5).finished

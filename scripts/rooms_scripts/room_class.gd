@@ -30,6 +30,8 @@ using different nodes, logic, and Area2D scenarios.
 @export var max_cam_zoom: float
 @export var min_cam_zoom: float
 
+var can_press_start = true
+
 signal change_room(p1_pos, p2_pos)
 signal change_cam_limits(top,bottom,left,right, min_zoom, max_zoom)
 signal win
@@ -53,7 +55,7 @@ this script. If you want more information, look in the
 room scripts folder.
 """
 func _ready():
-	pass
+	can_press_start = true
 
 # ---------------- Area Handle ---------------------
 func _on_any_area_entered(body: Node2D, area: Area2D):
@@ -79,5 +81,8 @@ func _on_exit_level_body_entered(body: Node2D) -> void:
 	if next_room == null:
 		#change the scene to win screen
 		pass
+	elif next_room.name == "end_screen":
+		print("can press spacebar")
+		can_press_start = true 
 	change_room.emit(next_room.p1_position, next_room.p2_position)
 	change_cam_limits.emit(next_room.top_cam_limit, next_room.bottom_cam_limit, next_room.left_cam_limit, next_room.right_cam_limit, next_room.min_cam_zoom, next_room.max_cam_zoom)
