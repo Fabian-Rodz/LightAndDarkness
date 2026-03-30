@@ -84,19 +84,30 @@ func _physics_process(delta: float) -> void:
 				velocity.y = -JUMP_VELOCITY 
 				sprite.play("jump")
 				change_state(Player_State.Airborne)
-			if Input.is_action_just_pressed(input_name + "interact"):
-				if current_area != null : 
-					current_area.action.emit(self)
-			if Input.is_action_pressed(input_name + "interact"):
-				if current_area != null:
-					if current_area.hold == true:
-						current_area.action.emit(self)
-			if Input.is_action_just_released(input_name + "interact"):
-				if current_area != null:
-					if current_area.hold:
-						if current_area.will_revert_changes:
-							current_area.revert_changes = true
-							current_area.action.emit(self)
+			
+			var action_name = input_name + "interact"
+			if current_area:
+				if Input.is_action_just_pressed(action_name):
+					current_area.handle_input(self, "pressed")
+				elif Input.is_action_pressed(action_name):
+					current_area.handle_input(self, "holding")
+				elif Input.is_action_just_released(action_name):
+					current_area.handle_input(self, "released")
+						
+			
+			#if Input.is_action_just_pressed(input_name + "interact"):
+				#if current_area != null : 
+					#current_area.action.emit(self)
+			#if Input.is_action_pressed(input_name + "interact"):
+				#if current_area != null:
+					#if current_area.hold == true:
+						#current_area.action.emit(self)
+			#if Input.is_action_just_released(input_name + "interact"):
+				#if current_area != null:
+					#if current_area.hold:
+						#if current_area.will_revert_changes:
+							#current_area.revert_changes = true
+							#current_area.action.emit(self)
 
 		# Airborne state is mostly used so that the jump anim doesn't loop, not much else to it
 		Player_State.Airborne:

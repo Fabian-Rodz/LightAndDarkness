@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://cmwe5jdkj68fn" path="res://scripts/rooms_scripts/area.gd" id="4_ahsqd"]
 [ext_resource type="Script" uid="uid://bjke78hcgskhe" path="res://scripts/rooms_scripts/path.gd" id="5_d8ufh"]
 [ext_resource type="PackedScene" uid="uid://cr0jw1imwa6cw" path="res://scenes/rooms/light.tscn" id="6_5bkl7"]
+[ext_resource type="Texture2D" uid="uid://cmiw82qe7yl16" path="res://assets/S001_nyknck.png" id="8_wmuqe"]
+[ext_resource type="Texture2D" uid="uid://jdn5w7eu3nk3" path="res://assets/pixilart-sprite - Kopi.png" id="8_wynrr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0g03g"]
 texture = ExtResource("3_ar6ir")
@@ -179,9 +181,9 @@ size = Vector2(311, 304)
 
 [sub_resource type="Curve2D" id="Curve2D_wynrr"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 362.77664, 27.38536, 0, 0, 0, 0, 501.78452, -28.659098, 0, 0, 0, 0, 636.5543, -51.586376, 0, 0, 0, 0, 780.6479, -54.452286, 0, 0, 0, 0, 878.1229, -56.99976, 0, 0, 0, 0, 1128.1676, -56.044456, 0, 0, 0, 0, 1159.529, -37.893696, 0, 0, 0, 0, 1159.529, -10.189901, 0, 0, 0, 0, 1159.529, 23.882582, 0, 0, 0, 0, 1162.0719, 66.87123, 0, 0, 0, 0, 1145.1198, 276.40106, 0, 0, 0, 0, 1073.9205, 297.73618, 0, 0, 0, 0, 962.0362, 314.29477, 0, 0, 0, 0, 802.6857, 314.93164, 0, 0, 0, 0, -953.5601, 308.56296, 0, 0, 0, 0, -997.6358, 292.00436, 0, 0, 0, 0, -1066.2921, 253.4738, 0, 0, 0, 0, -1080.7014, 190.10535, 0, 0, 0, 0, -1085.7871, -31.206573, 0, 0, 0, 0, 954.4077, 320.02658)
+"points": PackedVector2Array(0, 0, 0, 0, 362.77664, 27.38536, 0, 0, 0, 0, 501.78452, -28.659098, 0, 0, 0, 0, 636.5543, -51.586376, 0, 0, 0, 0, 780.6479, -54.452286, 0, 0, 0, 0, 878.1229, -56.99976, 0, 0, 0, 0, 1128.1676, -56.044456, 0, 0, 0, 0, 1159.529, -37.893696, 0, 0, 0, 0, 1159.529, -10.189901, 0, 0, 0, 0, 1159.529, 23.882582, 0, 0, 0, 0, 1162.0719, 66.87123, 0, 0, 0, 0, 1145.1198, 276.40106, 0, 0, 0, 0, 1073.9205, 297.73618, 0, 0, 0, 0, 962.0362, 314.29477, 0, 0, 0, 0, 802.6857, 314.93164, 0, 0, 0, 0, -953.5601, 308.56296, 0, 0, 0, 0, -997.6358, 292.00436, 0, 0, 0, 0, -1066.2921, 253.4738, 0, 0, 0, 0, -1080.7014, 190.10535, 0, 0, 0, 0, -1079.8539, -35.346222)
 }
-point_count = 20
+point_count = 19
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d8ufh"]
 size = Vector2(207, 183)
@@ -211,7 +213,16 @@ position = Vector2(1897, 989)
 position = Vector2(326, 161)
 script = ExtResource("4_ahsqd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LightButton" index="0" unique_id=705170262]
+[node name="Sprite2D" type="Sprite2D" parent="LightButton" index="0" unique_id=636252608]
+position = Vector2(-10, -2)
+scale = Vector2(4.3014383, 4.327869)
+texture = ExtResource("8_wynrr")
+hframes = 5
+frame = 1
+region_enabled = true
+region_rect = Rect2(-0.70854187, 0.52256775, 319.92578, 61.30983)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LightButton" index="1" unique_id=705170262]
 position = Vector2(3, -3)
 shape = SubResource("RectangleShape2D_hfp1j")
 
@@ -223,13 +234,21 @@ curve = SubResource("Curve2D_wynrr")
 position = Vector2(362.77664, 27.38536)
 rotation = -0.3832402
 scale = Vector2(0.3734042, 0.29887512)
+rotates = false
+cubic_interp = false
 loop = false
 script = ExtResource("5_d8ufh")
 speed = 800.0
 
 [node name="Light" parent="Path2D/PathFollow2D" index="0" unique_id=147879970 instance=ExtResource("6_5bkl7")]
 position = Vector2(-18.818214, 1.3398399)
-scale = Vector2(4.8767595, 4.027533)
+rotation = 0.43845552
+scale = Vector2(7.249913, 3.9515018)
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D/Light" index="1" unique_id=2055813357]
+visible = false
+texture = ExtResource("8_wmuqe")
+hframes = 4
 
 [node name="Button" type="Area2D" parent="." index="5" unique_id=905685338]
 position = Vector2(1126, 1006)
@@ -237,7 +256,16 @@ script = ExtResource("4_ahsqd")
 hold = true
 will_revert_changes = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Button" index="0" unique_id=1061004516]
+[node name="Sprite2D" type="Sprite2D" parent="Button" index="0" unique_id=1900157184]
+position = Vector2(-10, -2)
+scale = Vector2(4.3014383, 4.327869)
+texture = ExtResource("8_wynrr")
+hframes = 5
+frame = 1
+region_enabled = true
+region_rect = Rect2(-0.70854187, 0.52256775, 319.92578, 61.30983)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button" index="1" unique_id=1061004516]
 position = Vector2(-1, -5)
 shape = SubResource("RectangleShape2D_d8ufh")
 
@@ -247,9 +275,19 @@ script = ExtResource("4_ahsqd")
 hold = true
 will_revert_changes = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Button_2" index="0" unique_id=1425873297]
+[node name="Sprite2D" type="Sprite2D" parent="Button_2" index="0" unique_id=2042584186]
+position = Vector2(-9.999996, -1.9999809)
+scale = Vector2(4.3014383, 4.327869)
+texture = ExtResource("8_wynrr")
+hframes = 5
+frame = 1
+region_enabled = true
+region_rect = Rect2(-0.70854187, 0.52256775, 319.92578, 61.30983)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button_2" index="1" unique_id=1425873297]
 position = Vector2(-5, 0)
 shape = SubResource("RectangleShape2D_5bkl7")
 
 [connection signal="shoot_light" from="." to="Path2D/PathFollow2D" method="fire"]
+[connection signal="stop_projectile_sig" from="Path2D/PathFollow2D" to="." method="_on_path_follow_2d_stop_projectile_sig"]
 [connection signal="reset_progress_ratio" from="Path2D/PathFollow2D/Light" to="Path2D/PathFollow2D" method="stop_projectile"]
